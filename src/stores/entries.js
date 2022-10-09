@@ -1,17 +1,6 @@
-import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import axios from "axios";
 const apiBaseUrl = "https://api.publicapis.org";
-
-// const fetchApi = (apiPath) => {
-//   return fetch(`${apiBaseUrl}/${apiPath}`)
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .catch((error) =>
-//       console.error("Something went wrong. Can't fetch the data", error)
-//     );
-// };
 
 export const useEntriesStore = defineStore({
   id: "entry",

@@ -27,7 +27,6 @@ export default {
 
 <style scoped>
 .fixed-top {
-  position: fixed;
   display: flex;
   flex-direction: row;
   background-color: #afc3da;
@@ -40,7 +39,7 @@ export default {
   font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: space-evenly;
-  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 .nav-links {

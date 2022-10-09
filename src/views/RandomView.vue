@@ -1,19 +1,24 @@
 <template>
-  <div class="random-api">
+  <div class="Container">
     <h2>{{ title }}</h2>
-    <div v-if="randomEntries != null">
-      <div v-for="api in randomEntries" :key="api.API">
-        <h3>
+    <div v-if="randomEntries != null" class="api__info">
+      <div v-for="api in randomEntries" :key="api.API" class="api__container">
+        <p>
+          <span> API NAME : </span>
           <RouterLink :to="`/${api.API}`">
             {{ api.API }}
           </RouterLink>
-        </h3>
+        </p>
+
         <p>
+          <span>
+            <span> API DESC : </span>
+          </span>
           {{ api.Description }}
         </p>
       </div>
     </div>
-    <div class="another-random-btn">
+    <div class="random-btn">
       <button @click="getRandomEntries">Generate API</button>
     </div>
   </div>
@@ -31,39 +36,36 @@ const title = "Generated API";
 </script>
 
 <style>
-.random-api {
-  flex: 1;
-  min-height: calc(100vh - 200px);
+.Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
 }
-
-.random-api h2 {
-  color: #646464;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  font-size: 30px;
+.Container h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 auto;
 }
-.another-random-btn {
-  margin-top: 70px;
+.api__info {
+  padding: 20px;
 }
-
-.another-random-btn button {
-  color: #505f72;
-  background: #f3ede67e;
-  border-radius: 6px;
-  border: 1px solid #c9c8c7e7;
-  box-shadow: 2px 2px 6px 4px #d8d7d6e7;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 10px 15px;
+.api__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
 }
-
-/* iPhone version */
-@media (max-width: 767px) {
-  .random-api h2 {
-    font-size: 22px;
-  }
-  .another-random-btn button {
-    font-size: 14px;
-  }
+.random-btn button {
+  width: 9rem;
+  height: 3rem;
+  border-radius: 12px;
+  border: 1px solid;
+  cursor: pointer;
+  background-color: #afc3da;
+}
+.random-btn button:hover {
+  background-color: #fff;
 }
 </style>
