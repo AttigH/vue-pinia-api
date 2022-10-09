@@ -1,7 +1,7 @@
 <template>
   <div class="random-api">
     <h2>{{ title }}</h2>
-    <div v-if="randomEntries != null" class="random-api-view">
+    <div v-if="randomEntries != null">
       <div v-for="api in randomEntries" :key="api.API">
         <h3>
           <RouterLink :to="`/${api.API}`">
